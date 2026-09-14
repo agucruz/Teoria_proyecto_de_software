@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Plantas</title>
+    <!-- Enlace al archivo CSS externo tal como fue solicitado -->
+    <link rel="stylesheet" href="estilosIA.css">
+</head>
+<body>
+    <!-- Barra de Navegación -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#plantas">Plantas</a></li>
+                <li><a href="#sobre-mi">Sobre Mí</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Sección de Plantas con Filtro -->
+        <section id="plantas">
+            <h2>Nuestras Plantas</h2>
+            
+            <!-- Radios ocultos para la lógica del filtro 100% CSS -->
+            <input type="radio" id="filtro-todas" name="categoria" checked>
+            <input type="radio" id="filtro-interior" name="categoria">
+            <input type="radio" id="filtro-exterior" name="categoria">
+
+            <!-- Botones visibles del filtro -->
+            <div class="controles-filtro">
+                <label for="filtro-todas">Todas</label>
+                <label for="filtro-interior">Interior</label>
+                <label for="filtro-exterior">Exterior</label>
+            </div>
+
+            <!-- Grilla de Tarjetas -->
+            <div class="grilla-plantas">
+                
+                <!-- Plantas de Interior -->
+                <div class="tarjeta-planta interior">
+                    <h3>Monstera Deliciosa</h3>
+                    <img src="imagenes/monstera.jpg" alt="Monstera Deliciosa">
+                    <a href="info/monstera.pdf" class="btn-info">+ Info</a>
+                </div>
+                
+                <div class="tarjeta-planta interior">
+                    <h3>Sansevieria</h3>
+                    <img src="imagenes/sansevieria.jpg" alt="Sansevieria">
+                    <a href="info/sansevieria.pdf" class="btn-info">+ Info</a>
+                </div>
+                
+                <div class="tarjeta-planta interior">
+                    <h3>Pothos (Potus)</h3>
+                    <img src="imagenes/pothos.jpg" alt="Pothos">
+                    <a href="info/pothos.pdf" class="btn-info">+ Info</a>
+                </div>
+
+                <!-- Plantas de Exterior -->
+                <div class="tarjeta-planta exterior">
+                    <h3>Rosal Clásico</h3>
+                    <img src="imagenes/rosal.jpg" alt="Rosal">
+                    <a href="info/rosal.pdf" class="btn-info">+ Info</a>
+                </div>
+                
+                <div class="tarjeta-planta exterior">
+                    <h3>Lavanda</h3>
+                    <img src="imagenes/lavanda.jpg" alt="Lavanda">
+                    <a href="info/lavanda.pdf" class="btn-info">+ Info</a>
+                </div>
+                
+                <div class="tarjeta-planta exterior">
+                    <h3>Jazmín de Leche</h3>
+                    <img src="imagenes/jazmin.jpg" alt="Jazmín">
+                    <a href="info/jazmin.pdf" class="btn-info">+ Info</a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Sección Sobre Mí -->
+        <section id="sobre-mi">
+            <h2>Sobre Mí</h2>
+            <div class="contenido-sobre-mi">
+                <p>¡Hola! Soy Augusto Cruz Avellaneda, estudiante de informática en la Universidad Nacional de La Plata. Además de mi pasión por el desarrollo, los algoritmos y la tecnología en general, encuentro un gran equilibrio y disfrute en la botánica y el cuidado de la naturaleza. Este sitio web es un proyecto donde combino ambas pasiones para compartir información útil sobre el cuidado de nuestras plantas favoritas.</p>
+            </div>
+        </section>
+
+        <!-- Sección de Contacto -->
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <form class="formulario-contacto" action="#" method="POST">
+                <div class="grupo-form">
+                    <label for="nombre">Nombre completo:</label>
+                    <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+                </div>
+                
+                <div class="grupo-form">
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" required placeholder="tuemail@ejemplo.com">
+                </div>
+                
+                <div class="grupo-form">
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" rows="5" required placeholder="¿En qué te puedo ayudar?"></textarea>
+                </div>
+                
+                <button type="submit" class="btn-enviar">Enviar Mensaje</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
