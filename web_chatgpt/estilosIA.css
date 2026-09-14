@@ -1,0 +1,567 @@
+/* ================================
+   CONFIGURACION GENERAL
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f8f3;
+    color: #26382a;
+    line-height: 1.6;
+}
+
+
+/* ================================
+   ENCABEZADO
+================================ */
+
+header {
+    background-color: #285943;
+    color: white;
+    padding: 20px 40px;
+}
+
+nav {
+    max-width: 1200px;
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h1 {
+    font-size: 28px;
+}
+
+nav ul {
+    list-style: none;
+
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+
+/* ================================
+   HERO
+================================ */
+
+.hero {
+    min-height: 450px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background: linear-gradient(
+        rgba(40, 89, 67, 0.85),
+        rgba(91, 140, 91, 0.75)
+    );
+
+    color: white;
+    padding: 40px 20px;
+}
+
+.hero-contenido {
+    max-width: 700px;
+}
+
+.hero h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.boton {
+    display: inline-block;
+
+    background-color: white;
+    color: #285943;
+
+    padding: 12px 25px;
+
+    border-radius: 6px;
+
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.boton:hover {
+    background-color: #e5eee5;
+}
+
+
+/* ================================
+   SECCION PLANTAS
+================================ */
+
+.plantas {
+    max-width: 1200px;
+    margin: auto;
+    padding: 70px 20px;
+}
+
+.plantas > h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.descripcion {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+
+/* ================================
+   RADIO BUTTONS
+================================ */
+
+/*
+   Los radio buttons se ocultan.
+   Las etiquetas funcionan como botones del filtro.
+*/
+
+#todas,
+#interior,
+#exterior {
+    display: none;
+}
+
+
+/* ================================
+   FILTRO
+================================ */
+
+.filtro {
+    background-color: white;
+
+    border: 2px solid #b8ccb9;
+
+    border-radius: 10px;
+
+    padding: 20px;
+
+    margin-bottom: 40px;
+
+    text-align: center;
+}
+
+.filtro h3 {
+    margin-bottom: 15px;
+}
+
+.filtro label {
+    display: inline-block;
+
+    padding: 10px 20px;
+
+    margin: 5px;
+
+    border: 2px solid #285943;
+
+    border-radius: 6px;
+
+    color: #285943;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.filtro label:hover {
+    background-color: #e5eee5;
+}
+
+
+/* ================================
+   ESTADO ACTIVO DEL FILTRO
+================================ */
+
+/*
+   Cuando un radio esta seleccionado,
+   cambiamos visualmente el boton correspondiente.
+*/
+
+#todas:checked ~ .filtro label[for="todas"],
+#interior:checked ~ .filtro label[for="interior"],
+#exterior:checked ~ .filtro label[for="exterior"] {
+    background-color: #285943;
+    color: white;
+}
+
+
+/* ================================
+   CATEGORIAS
+================================ */
+
+.categoria {
+    margin-bottom: 50px;
+}
+
+.categoria > h3 {
+    font-size: 28px;
+    margin-bottom: 25px;
+
+    border-bottom: 2px solid #b8ccb9;
+
+    padding-bottom: 10px;
+}
+
+
+/* ================================
+   FILTRO CSS
+================================ */
+
+/*
+   TODAS
+*/
+
+#todas:checked ~ #categoria-interior,
+#todas:checked ~ #categoria-exterior {
+    display: block;
+}
+
+
+/*
+   INTERIOR
+*/
+
+#interior:checked ~ #categoria-interior {
+    display: block;
+}
+
+#interior:checked ~ #categoria-exterior {
+    display: none;
+}
+
+
+/*
+   EXTERIOR
+*/
+
+#exterior:checked ~ #categoria-interior {
+    display: none;
+}
+
+#exterior:checked ~ #categoria-exterior {
+    display: block;
+}
+
+
+/* ================================
+   TARJETAS DE PLANTAS
+================================ */
+
+.plantas-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.planta-card {
+    background-color: white;
+
+    border: 2px solid #c5d5c6;
+
+    border-radius: 10px;
+
+    padding: 20px;
+
+    text-align: center;
+
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.planta-card h4 {
+    font-size: 24px;
+
+    color: #285943;
+
+    margin-bottom: 15px;
+}
+
+.planta-card img {
+    width: 100%;
+    height: 220px;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+
+    margin-bottom: 15px;
+}
+
+.planta-card p {
+    margin-bottom: 15px;
+}
+
+.planta-card a {
+    display: inline-block;
+
+    color: #285943;
+
+    font-weight: bold;
+
+    text-decoration: none;
+
+    border: 2px solid #285943;
+
+    padding: 8px 15px;
+
+    border-radius: 5px;
+}
+
+.planta-card a:hover {
+    background-color: #285943;
+    color: white;
+}
+
+
+/* ================================
+   SOBRE MI
+================================ */
+
+.sobre-mi {
+    background-color: white;
+
+    padding: 70px 20px;
+}
+
+.sobre-mi > h2 {
+    text-align: center;
+
+    font-size: 36px;
+
+    margin-bottom: 30px;
+}
+
+.sobre-contenido {
+    max-width: 800px;
+
+    margin: auto;
+
+    text-align: center;
+
+    border: 2px solid #c5d5c6;
+
+    border-radius: 10px;
+
+    padding: 35px;
+}
+
+.sobre-contenido h3 {
+    font-size: 26px;
+
+    color: #285943;
+
+    margin-bottom: 15px;
+}
+
+.sobre-contenido p {
+    margin-bottom: 15px;
+}
+
+
+/* ================================
+   CONTACTO
+================================ */
+
+.contacto {
+    max-width: 800px;
+
+    margin: auto;
+
+    padding: 70px 20px;
+}
+
+.contacto h2 {
+    text-align: center;
+
+    font-size: 36px;
+
+    margin-bottom: 10px;
+}
+
+.contacto > p {
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+form {
+    background-color: white;
+
+    border: 2px solid #c5d5c6;
+
+    border-radius: 10px;
+
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    font-weight: bold;
+
+    margin-bottom: 5px;
+}
+
+form input,
+form textarea {
+    font-family: inherit;
+
+    font-size: 16px;
+
+    padding: 12px;
+
+    margin-bottom: 20px;
+
+    border: 1px solid #aebfaf;
+
+    border-radius: 5px;
+}
+
+form input:focus,
+form textarea:focus {
+    outline: 2px solid #5b8c5b;
+}
+
+form button {
+    padding: 12px;
+
+    background-color: #285943;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 5px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #1e4433;
+}
+
+
+/* ================================
+   PIE DE PAGINA
+================================ */
+
+footer {
+    background-color: #285943;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 25px 20px;
+}
+
+
+/* ================================
+   RESPONSIVE - TABLET
+================================ */
+
+@media (max-width: 900px) {
+
+    nav {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .plantas-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero h2 {
+        font-size: 40px;
+    }
+}
+
+
+/* ================================
+   RESPONSIVE - CELULAR
+================================ */
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 20px;
+    }
+
+    nav ul {
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 10px;
+    }
+
+    .hero {
+        min-height: 400px;
+    }
+
+    .hero h2 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 17px;
+    }
+
+    .plantas-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .filtro label {
+        display: block;
+
+        margin: 8px 0;
+    }
+
+    .planta-card img {
+        height: 250px;
+    }
+
+    .sobre-mi > h2,
+    .contacto h2,
+    .plantas > h2 {
+        font-size: 30px;
+    }
+}

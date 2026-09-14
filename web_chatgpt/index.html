@@ -1,0 +1,278 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Jardin</title>
+    <link rel="stylesheet" href="estilosIA.css">
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+    <header>
+        <nav>
+            <h1>Mi Jardin</h1>
+
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#plantas">Plantas</a></li>
+                <li><a href="#sobre-mi">Sobre mi</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!-- INICIO -->
+    <main>
+
+        <section id="inicio" class="hero">
+            <div class="hero-contenido">
+                <h2>Bienvenido a mi jardin</h2>
+                <p>
+                    Un espacio dedicado al cuidado y conocimiento de diferentes
+                    tipos de plantas.
+                </p>
+
+                <a href="#plantas" class="boton">Ver plantas</a>
+            </div>
+        </section>
+
+
+        <!-- PLANTAS -->
+        <section id="plantas" class="plantas">
+
+            <h2>Mis plantas</h2>
+
+            <p class="descripcion">
+                Conoce algunas de las plantas que pueden formar parte de tu hogar
+                o de tu jardin.
+            </p>
+
+
+            <!--
+                Los radio buttons estan directamente dentro de la section.
+                Esto permite que el selector CSS "~" funcione correctamente.
+            -->
+
+            <input type="radio" name="categoria" id="todas" checked>
+            <input type="radio" name="categoria" id="interior">
+            <input type="radio" name="categoria" id="exterior">
+
+
+            <!-- FILTRO -->
+            <div class="filtro">
+
+                <h3>Filtrar por categoria</h3>
+
+                <label for="todas">Todas</label>
+                <label for="interior">Interior</label>
+                <label for="exterior">Exterior</label>
+
+            </div>
+
+
+            <!-- PLANTAS DE INTERIOR -->
+            <div id="categoria-interior" class="categoria">
+
+                <h3>Plantas de interior</h3>
+
+                <div class="plantas-grid">
+
+                    <article class="planta-card">
+                        <h4>Potus</h4>
+
+                        <img src="imagenes/pothos.jpg" alt="Potus">
+
+                        <p>
+                            Planta resistente y facil de cuidar, ideal para
+                            interiores con buena iluminacion.
+                        </p>
+
+                        <a href="info/pothos.pdf" target="_blank">
+                            + Info
+                        </a>
+                    </article>
+
+
+                    <article class="planta-card">
+                        <h4>Sansevieria</h4>
+
+                        <img src="imagenes/sansevieria.jpg" alt="Sansevieria">
+
+                        <p>
+                            Planta de bajo mantenimiento que se adapta muy bien
+                            a diferentes ambientes.
+                        </p>
+
+                        <a href="info/sansevieria.pdf" target="_blank">
+                            + Info
+                        </a>
+                    </article>
+
+
+                    <article class="planta-card">
+                        <h4>Monstera</h4>
+
+                        <img src="imagenes/monstera.jpg" alt="Monstera">
+
+                        <p>
+                            Planta tropical de hojas grandes, muy utilizada
+                            para decorar interiores.
+                        </p>
+
+                        <a href="info/monstera.pdf" target="_blank">
+                            + Info
+                        </a>
+                    </article>
+
+                </div>
+
+            </div>
+
+
+            <!-- PLANTAS DE EXTERIOR -->
+            <div id="categoria-exterior" class="categoria">
+
+                <h3>Plantas de exterior</h3>
+
+                <div class="plantas-grid">
+
+                    <article class="planta-card">
+                        <h4>Lavanda</h4>
+
+                        <img src="imagenes/lavanda.jpg" alt="Lavanda">
+
+                        <p>
+                            Planta aromatica que necesita buena cantidad de
+                            luz solar y un suelo bien drenado.
+                        </p>
+
+                        <a href="info/lavanda.pdf" target="_blank">
+                            + Info
+                        </a>
+                    </article>
+
+
+                    <article class="planta-card">
+                        <h4>Rosal</h4>
+
+                        <img src="imagenes/rosal.jpg" alt="Rosal">
+
+                        <p>
+                            Planta ornamental que produce flores y necesita
+                            varias horas de luz solar.
+                        </p>
+
+                        <a href="info/rosal.pdf" target="_blank">
+                            + Info
+                        </a>
+                    </article>
+
+
+                    <article class="planta-card">
+                        <h4>Girasol</h4>
+
+                        <img src="imagenes/girasol.jpg" alt="Girasol">
+
+                        <p>
+                            Planta conocida por sus grandes flores amarillas
+                            y su necesidad de abundante luz solar.
+                        </p>
+
+                        <a href="info/girasol.pdf" target="_blank">
+                            + Info
+                        </a>
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SOBRE MI -->
+        <section id="sobre-mi" class="sobre-mi">
+
+            <h2>Sobre mi</h2>
+
+            <div class="sobre-contenido">
+
+                <div>
+                    <h3>Hola, soy Juan</h3>
+
+                    <p>
+                        Este sitio fue creado como un espacio para compartir
+                        informacion sobre plantas y sus cuidados.
+                    </p>
+
+                    <p>
+                        Me interesa aprender sobre jardineria y conocer las
+                        caracteristicas de diferentes especies.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTACTO -->
+        <section id="contacto" class="contacto">
+
+            <h2>Contacto</h2>
+
+            <p>
+                Si queres comunicarte conmigo, podes completar el siguiente
+                formulario.
+            </p>
+
+            <form action="#" method="post">
+
+                <label for="nombre">Nombre</label>
+                <input
+                    type="text"
+                    id="nombre"
+                    name="nombre"
+                    required
+                >
+
+
+                <label for="email">Email</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                >
+
+
+                <label for="mensaje">Mensaje</label>
+                <textarea
+                    id="mensaje"
+                    name="mensaje"
+                    rows="6"
+                    required
+                ></textarea>
+
+
+                <button type="submit">Enviar</button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <!-- PIE DE PAGINA -->
+    <footer>
+        <p>&copy; 2026 Mi Jardin - Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
+```
